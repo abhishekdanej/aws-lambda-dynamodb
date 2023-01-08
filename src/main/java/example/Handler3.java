@@ -13,10 +13,10 @@ public class Handler3 implements RequestHandler<String, String> {
 	@Override
 	public String handleRequest(String event, Context context) {
 
-		LambdaLogger log = context.getLogger();
+		LambdaLogger logger = context.getLogger();
 		String email = event;
 		
-		Logger.loggerFor("Email value: " + email);
+		logger.log("Email value: " + email);
 		SendMessage msg = new SendMessage();
 		
 		try {
