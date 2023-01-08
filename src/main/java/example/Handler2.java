@@ -13,12 +13,12 @@ public class Handler2 implements RequestHandler<String, String> {
 		
 		LambdaLogger logger = context.getLogger();
 		String val = event;
-		logger.log("CASE is about to be assigned: " + val);
+		logger.log("\nCASE is about to be assigned: " + val);
 		
 		// Create very simple logic to assign case to an employee
         int temp = (Math.random() <= 0.5) ? 1 : 2;
         
-        logger.log("TMP IS: " + temp);
+        logger.log("\nTMP IS: " + temp);
         
         String emailEmp = "";
         
@@ -31,7 +31,7 @@ public class Handler2 implements RequestHandler<String, String> {
         	perCase.putRecord(val, "Sarah White", emailEmp);
         }
         
-        logger.log("emailEmp IS " + emailEmp);
+        logger.log("\nemailEmp IS " + emailEmp);
         
         //return email, used in next step
 		return emailEmp;

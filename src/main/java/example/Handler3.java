@@ -6,8 +6,6 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-import software.amazon.awssdk.utils.Logger;
-
 public class Handler3 implements RequestHandler<String, String> {
 
 	@Override
@@ -16,7 +14,7 @@ public class Handler3 implements RequestHandler<String, String> {
 		LambdaLogger logger = context.getLogger();
 		String email = event;
 		
-		logger.log("Email value: " + email);
+		logger.log("\nEmail value: " + email);
 		SendMessage msg = new SendMessage();
 		
 		try {

@@ -17,13 +17,13 @@ public class Handler implements RequestHandler<Map<String,String>, String> {
 		LambdaLogger logger = context.getLogger();
 		Gson gson = new GsonBuilder().create();
 		
-		logger.log("ENV VARIABLES: " + gson.toJson(System.getenv()));
-		logger.log("CONTEXT: " + gson.toJson(context));
+		logger.log("\nENV VARIABLES: " + gson.toJson(System.getenv()));
+		logger.log("\nCONTEXT: " + gson.toJson(context));
 		
-		logger.log("EVENT Data: " + gson.toJson(event));
+		logger.log("\nEVENT Data: " + gson.toJson(event));
 		
 		String myCaseID = event.get("inputCaseID");
-		logger.log("CaseId: " + myCaseID);
+		logger.log("\nCaseId: " + myCaseID);
 		
 		return myCaseID;
 	}
